@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}[margins=1in]
+
+\title{Induction}
+\author{smgrmd }
+\date{May 2019}
+
+\begin{document}
+
+\section{Problem}
+Show that for composition of finitely many invertible functions is invertible.
+
+\section{Solution}
+This proof can be performed with induction.
+The base case consists of a single invertible function.
+By definition, such a function is invertible. \\
+
+Suppose that this holds true for a function composed of $k$ invertible functions is itself invertible. \\
+$g(x) = (f_k \circ \ldots \circ f_1)(x) \Rightarrow \exists h(x) : (h \circ g)(x) = 1$ \\
+Then in order to complete the proof by induction, we must demonstrate that a function composed of $k+1$ invertible functions is invertible. \\
+
+Consider $i(x) = (f_{k+1} \circ g)(x)$.
+We know that for $\forall f_{k+1}(x) \exists f_{k+1}^{-1}(x): (f_{k+1}^{-1} \circ f_{k+1})(x) = 1$.
+Let $j(x) = (h \circ f_{k+1}^{-1})(x)$.
+Then $(j \circ i)(x) = ((h \circ f_{k+1}^{-1}) \circ (f_{k+1} \circ g))(x) = (h \circ (f_{k+1}^{-1} \circ f_{k+1}) \circ g)(x) = (h \circ g)(x) = 1$.
+This demonstrates that a function composed of $k+1$ invertible functions is invertible.
+Consequently, we complete our proof by induction.
+
+\end{document}
+
